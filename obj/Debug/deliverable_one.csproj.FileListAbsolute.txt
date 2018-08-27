@@ -1,0 +1,7 @@
+\\mi\dfs\users\BJendrzejak\Documents\prework\deliverable_one\deliverable_one\bin\Debug\deliverable_one.exe.config
+\\mi\dfs\users\BJendrzejak\Documents\prework\deliverable_one\deliverable_one\bin\Debug\deliverable_one.exe
+\\mi\dfs\users\BJendrzejak\Documents\prework\deliverable_one\deliverable_one\bin\Debug\deliverable_one.pdb
+\\mi\dfs\users\BJendrzejak\Documents\prework\deliverable_one\deliverable_one\obj\Debug\deliverable_one.csprojAssemblyReference.cache
+\\mi\dfs\users\BJendrzejak\Documents\prework\deliverable_one\deliverable_one\obj\Debug\deliverable_one.csproj.CoreCompileInputs.cache
+\\mi\dfs\users\BJendrzejak\Documents\prework\deliverable_one\deliverable_one\obj\Debug\deliverable_one.exe
+\\mi\dfs\users\BJendrzejak\Documents\prework\deliverable_one\deliverable_one\obj\Debug\deliverable_one.pdb
