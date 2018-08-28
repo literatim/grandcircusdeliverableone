@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,6 +30,7 @@ namespace deliverable_one
             if (splitNum1.Count() != splitNum2.Count())
             {
                 Console.WriteLine("Number of digits need to be the same. Please try again.");
+                Console.ReadKey();
                 return;
             }
 
@@ -50,6 +52,7 @@ namespace deliverable_one
                 Console.WriteLine("False");
             }
 
+            Console.WriteLine("Press any key to exit...");
             Console.ReadLine();
         }
 
