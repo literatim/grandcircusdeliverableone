@@ -14,13 +14,12 @@ namespace deliverable_one
         {
             Console.WriteLine("Enter two numbers to check if their sums at each place are equal (tens, hundreds, thousands, etc.)");
             Console.WriteLine("--------------------------------------------------------------------------------------------------");
-            int num1, num2, sum1 = 0, sum2 = 0;
 
             //Prompt user to enter numbers, call method to accept only integers
             Console.WriteLine("Enter the first number : ");
-            num1 = GetUserInput();
+            var num1 = GetUserInput();
             Console.WriteLine("Enter the second number to compare: ");
-            num2 = GetUserInput();
+            var num2 = GetUserInput();
 
             //Turn numbers into list of individual digits
             var splitNum1 = SplitNumber(num1);
@@ -42,7 +41,7 @@ namespace deliverable_one
             }
 
             //Compare the sums of the digits and determine if they are all the same
-            if (summedList.All(o => o == summedList[0]))
+            if (summedList.All(i => i == summedList[0]))
             {
                 Console.WriteLine("True");
             }
