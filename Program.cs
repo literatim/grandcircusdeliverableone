@@ -18,33 +18,31 @@ namespace deliverable_one
 
             Console.WriteLine("Enter the first number : ");
             //First while loop for user validation. If the user enters anything but a number it will continue prompting until a number is entered.
-            while (!int.TryParse(Console.ReadLine(), out num1))
-            {
-                Console.WriteLine("Please enter a valid numerical value!");
-                Console.WriteLine("Please enter a number: ");
-            }
-            //Same loop down here that validates user input
+            num1 = GetUserInput();
             Console.WriteLine("Enter the second number to compare: ");
-            while (!int.TryParse(Console.ReadLine(), out num2))
+            num2 = GetUserInput();
+
+            //Turn numbers into list of individual digits
+            var splitNum1 = SplitNumber(num1);
+            var splitNum2 = SplitNumber(num2);
+
+            //exit if the digit counts are different
+            if (splitNum1.Count() != splitNum2.Count())
             {
-                Console.WriteLine("Please enter a valid numerical value!");
-                Console.WriteLine("Please enter another number to compare: ");
+                Console.WriteLine("Number of digits need to be the same. Please try again.");
+                return;
             }
 
+            var summedList = new List<int>();
 
-            //Loop to determine sum of numbers added together
-            for (; num1 > 0; num1 = num1 / 10)
+            //put this sum of the individual digits into a list
+            for (int i = 0; i < splitNum1.Count(); i++)
             {
-                sum1 = sum1 + num1 % 10;
+                summedList.Add(splitNum1[i] + splitNum2[i]);
             }
 
-            for (; num2 > 0; num2 = num2 / 10)
-            {
-                sum2 = sum2 + num2 % 10;
-            }
-
-            //Comparative operator to determine if the sum of each entered number is true or false
-            if (sum1 == sum2)
+            //Compare the sums of the digits and determine if they are all the same
+            if (summedList.All(o => o == summedList[0]))
             {
                 Console.WriteLine("True");
             }
@@ -52,8 +50,42 @@ namespace deliverable_one
             {
                 Console.WriteLine("False");
             }
-            //Console.ReadLine();
+
+            Console.ReadLine();
         }
-      
+
+        private static int GetUserInput()
+        {
+            int input;
+            while (!int.TryParse(Console.ReadLine(), out input))
+            {
+                Console.WriteLine("Please enter a valid numerical value!");
+                Console.WriteLine("Please enter a number: ");
+            }
+
+            return input;
+        }
+
+        public static List<int> SplitNumber(int num)
+        {
+            var numberList = new List<int>();
+
+            //get the number of digits in the number
+            var numberCharlength = Math.Floor(Math.Log10(num) + 1);
+
+            var denominator = 1;
+            var mod = 10;
+
+            for (int i = 0; i < numberCharlength; i++)
+            {
+                numberList.Add(num % mod / denominator);
+                denominator = denominator * 10;
+                mod = mod * 10;
+            }
+
+            return numberList;
+        }
+        
     }
+
 }
