@@ -16,8 +16,8 @@ namespace deliverable_one
             Console.WriteLine("--------------------------------------------------------------------------------------------------");
             int num1, num2, sum1 = 0, sum2 = 0;
 
+            //Prompt user to enter numbers, call method to accept only integers
             Console.WriteLine("Enter the first number : ");
-            //First while loop for user validation. If the user enters anything but a number it will continue prompting until a number is entered.
             num1 = GetUserInput();
             Console.WriteLine("Enter the second number to compare: ");
             num2 = GetUserInput();
@@ -26,7 +26,7 @@ namespace deliverable_one
             var splitNum1 = SplitNumber(num1);
             var splitNum2 = SplitNumber(num2);
 
-            //exit if the digit counts are different
+            //Exit if the digit counts are different
             if (splitNum1.Count() != splitNum2.Count())
             {
                 Console.WriteLine("Number of digits need to be the same. Please try again.");
@@ -35,7 +35,7 @@ namespace deliverable_one
 
             var summedList = new List<int>();
 
-            //put this sum of the individual digits into a list
+            //Put this sum of the individual digits into a list
             for (int i = 0; i < splitNum1.Count(); i++)
             {
                 summedList.Add(splitNum1[i] + splitNum2[i]);
@@ -54,6 +54,10 @@ namespace deliverable_one
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Gets user input and loops until a valid integer is obtained
+        /// </summary>
+        /// <returns></returns>
         private static int GetUserInput()
         {
             int input;
@@ -65,12 +69,16 @@ namespace deliverable_one
 
             return input;
         }
-
+        /// <summary>
+        /// Creates a list of the numbers entered and sum through each place in the number list
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
         public static List<int> SplitNumber(int num)
         {
             var numberList = new List<int>();
 
-            //get the number of digits in the number
+            //Get the number of digits in the user's number
             var numberCharlength = Math.Floor(Math.Log10(num) + 1);
 
             var denominator = 1;
